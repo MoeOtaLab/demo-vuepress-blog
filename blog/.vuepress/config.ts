@@ -1,6 +1,5 @@
 import { defineUserConfig } from "@vuepress/cli";
 import type { GungnirThemeOptions } from "vuepress-theme-gungnir";
-import { navbar, sidebar } from "./configs";
 
 export default defineUserConfig<GungnirThemeOptions>({
   // 个人博客请改成 /
@@ -19,7 +18,10 @@ export default defineUserConfig<GungnirThemeOptions>({
   },
   bundler: "@vuepress/vite",
   bundlerConfig: {
-    // see below
+    build: {
+      target: 'es2015',
+      commonjsOptions: {}
+    }
   },
 
   theme: "vuepress-theme-gungnir",
