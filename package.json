@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vuepress": "^2.0.0-beta.32",
     "vuepress-theme-gungnir": "2.0.0-alpha.9"
   },
   "dependencies": {
