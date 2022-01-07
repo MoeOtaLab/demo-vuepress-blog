@@ -6,7 +6,9 @@ import { navbar, sidebar } from "./configs";
 const isProd = process.env.NODE_ENV === "production";
 
 export default defineUserConfig<GungnirThemeOptions>({
-  base: "/",
+  // 个人博客请改成 /
+  // base: "/",
+  base: '/demo-vuepress-blog/',
 
   head: [["link", { rel: "icon", href: "/img/logo.svg" }]],
 
