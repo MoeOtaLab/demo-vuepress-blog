@@ -22,11 +22,6 @@ export default defineUserConfig<GungnirThemeOptions>({
     },
   },
 
-  bundler:
-    // specify bundler via environment variable
-    process.env.DOCS_BUNDLER ??
-    // use vite by default
-    "@vuepress/vite",
 
   theme: "vuepress-theme-gungnir",
 
@@ -144,12 +139,9 @@ export default defineUserConfig<GungnirThemeOptions>({
       mdPlus: {
         all: true
       },
-      ga: "",
-      ba: "",
-      rss: {
-        siteURL: "",
-        copyright: ""
-      }
+      ga: false,
+      ba: false,
+      rss: false
     },
 
     footer: `
