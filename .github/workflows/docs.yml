@@ -39,10 +39,6 @@ jobs:
         # uses: mskelton/setup-yarn@b0673acb4e37f20265fbddbf7567110ebb313605
         uses: mskelton/setup-yarn@v1.2.1
 
-        # run build script
-      - name: Build VuePress site
-        run: yarn
-
       # run build script
       - name: Build VuePress site
         run: yarn build
@@ -55,7 +51,7 @@ jobs:
           # deploy to gh-pages branch
           target_branch: gh-pages
           # deploy the default output dir of VuePress
-          build_dir: docs/.vuepress/dist
+          build_dir: blog/.vuepress/dist
         env:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
