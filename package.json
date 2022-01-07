@@ -5,17 +5,24 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "patch-package",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "yarn dev",
+    "docs:build": "yarn build",
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^2.0.0-beta.32",
-    "vuepress-theme-gungnir": "^2.0.0-alpha.9"
+    "vuepress-theme-gungnir": "2.0.0-alpha.9"
   },
   "dependencies": {
+    "anywhere": "^1.5.0",
     "patch-package": "^6.4.7",
-    "postinstall-postinstall": "^2.1.0"
+    "postinstall-postinstall": "^2.1.0",
+    "rimraf": "^3.0.2",
+    "vuepress": "^2.0.0-beta.31",
+    "vuepress-vite": "2.0.0-beta.31",
+    "vuepress-webpack": "2.0.0-beta.31"
   }
 }

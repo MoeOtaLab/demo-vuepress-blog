@@ -1,14 +1,11 @@
 import { defineUserConfig } from "@vuepress/cli";
 import type { GungnirThemeOptions } from "vuepress-theme-gungnir";
-import { zh, en } from "vuepress-theme-gungnir/lib/node/i18n";
 import { navbar, sidebar } from "./configs";
-
-const isProd = process.env.NODE_ENV === "production";
 
 export default defineUserConfig<GungnirThemeOptions>({
   // 个人博客请改成 /
-  // base: "/",
-  base: '/demo-vuepress-blog/',
+  base: "/",
+  // base: '/demo-vuepress-blog/',
 
   head: [["link", { rel: "icon", href: "/img/logo.svg" }]],
 
@@ -21,7 +18,10 @@ export default defineUserConfig<GungnirThemeOptions>({
       description: 'xxx的博客',
     },
   },
-
+  bundler: "@vuepress/vite",
+  bundlerConfig: {
+    // see below
+  },
 
   theme: "vuepress-theme-gungnir",
 
@@ -98,36 +98,69 @@ export default defineUserConfig<GungnirThemeOptions>({
       }
     },
 
-    // theme-level locales config
-    locales: {
-      /**
-       * English locale config
-       *
-       * As the default locale is English, we don't need to set all of the locale fields
-       */
-      "/": {
-        // navbar
-        navbar: navbar.zh,
-        // sidebar
-        sidebar: sidebar.zh,
-        backToHome: '返回首页',
-        homeText: '首页 - 左上角',
-        searchPlaceholder: '搜索',
-        // i18n
-        ...zh
-      },
+    backToHome: '返回首页',
+    homeText: '首页 - 左上角',
+    searchPlaceholder: '搜索',
 
-      /**
-       * English 暂时不支持
-       */
-      "/en/": {
-        // navbar
-        navbar: navbar.en,
-        // sidebar
-        sidebar: sidebar.en,
-        ...en
-      }
+    navbar: [{
+      text: "首页",
+      link: "/",
+      icon: "fort-awesome"
     },
+    {
+      text: "标签",
+      link: "/tags/",
+      icon: "tag"
+    },
+    {
+      text: "链接",
+      link: "/links/",
+      icon: "satellite-dish"
+    },
+    {
+      text: "关于",
+      link: "/about/",
+      icon: "about-me",
+      iconScale: 1.1
+    },
+      // {
+      //   text: "VuePress",
+      //   link: "https://v2.vuepress.vuejs.org/zh/",
+      //   icon: "vuejs",
+      //   iconScale: 1.1
+      // },
+      // {
+      //   text: `v2`,
+      //   icon: "git",
+      //   iconScale: 1.05,
+      //   children: [
+      //     {
+      //       text: "GitHub",
+      //       link: "https://github.com/Renovamen/vuepress-theme-gungnir",
+      //       icon: "github-line",
+      //       iconScale: 1.1
+      //     },
+      //     {
+      //       text: "更新日志",
+      //       link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/v2/packages/theme/CHANGELOG.md",
+      //       icon: "compare"
+      //     },
+      //     {
+      //       text: "v2.x",
+      //       link: "/docs/",
+      //       icon: "rocket",
+      //       iconScale: 0.9
+      //     },
+      //     {
+      //       text: "v0.x",
+      //       link: "https://vuepress-theme-gungnir.vercel.app",
+      //       icon: "boat"
+      //     }
+      //   ]
+      // }
+    ],
+
+    sidebar: {},
 
     themePlugins: {
       // only enable git plugin in production mode
