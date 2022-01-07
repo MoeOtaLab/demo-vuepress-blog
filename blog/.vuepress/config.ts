@@ -4,8 +4,7 @@ import { navbar, sidebar } from "./configs";
 
 export default defineUserConfig<GungnirThemeOptions>({
   // 个人博客请改成 /
-  // base: "/",
-  base: '/demo-vuepress-blog/',
+  base: "/",
 
   head: [["link", { rel: "icon", href: "/img/logo.svg" }]],
 
