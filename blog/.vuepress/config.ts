@@ -7,26 +7,13 @@ export default defineUserConfig<GungnirThemeOptions>({
 
   head: [["link", { rel: "icon", href: "/img/logo.svg" }]],
 
-  // site-level locales config
-  locales: {
-    "/": {
-      lang: "zh-CN",
-      // 网站标签页名字
-      title: '博客',
-      description: 'xxx的博客',
-    },
-  },
+  // 网站标签页名字
+  title: '博客',
+  description: 'xxx的博客',
+
   bundler: "@vuepress/vite",
-  bundlerConfig: {
-    build: {
-      target: 'es2015',
-      commonjsOptions: {}
-    }
-  },
 
   theme: "vuepress-theme-gungnir",
-
-  // title: "",
 
   themeConfig: {
     // 一言，自动获取一句名言
@@ -167,9 +154,8 @@ export default defineUserConfig<GungnirThemeOptions>({
       // only enable git plugin in production mode
       git: false,
       katex: true,
-      mermaid: true,
-      chartjs: false,
       giscus: false,
+      chartjs: false,
       mdPlus: {
         all: true
       },
