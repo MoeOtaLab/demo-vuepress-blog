@@ -89,6 +89,11 @@ export default defineUserConfig<GungnirThemeOptions>({
     backToHome: '返回首页',
     homeText: '首页 - 左上角',
     searchPlaceholder: '搜索',
+    locales: {
+      '/': {
+        backToHome: '返回首页',
+      }
+    },
 
     navbar: [{
       text: "首页",
